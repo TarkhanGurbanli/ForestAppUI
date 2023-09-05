@@ -1,0 +1,46 @@
+﻿@model Article
+
+
+
+<a href="/admin/article" class="btn btn-dark m-2"><i class="fa-solid fa-caret-left"></i> Back</a>
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="alert-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Content"></label>
+        <textarea id="editor" class="form-control" asp-for="Content">
+   </textarea>
+        <span asp-validation-for="Content" class="alert-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Photo</label>
+        <input type="file" id="Photo" accept="image/*" name="Photo" class="form-control" />
+        <span asp-validation-for="PhotoUrl" class="alert-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Tag</label>
+        <select multiple name="tagIds" class="form-control">
+            @foreach (var item in ViewData["Tags"] as List<Tag>)
+            {
+                <option value="@item.Id">@item.TagName</option>
+            }
+        </select>
+    </div>
+
+    <input href="/admin/article" type="submit" value="Create" class="btn btn-success mt-2" />
+</form>
+
+

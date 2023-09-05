@@ -1,0 +1,23 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+
+<a href="/admin/role" class="btn btn-dark m-2"><i class="fa-solid fa-caret-left"></i> Back</a>
+
+
+@{
+    if (ViewBag.Error != null)
+    {
+        <span class="alert-danger">@ViewBag.Error</span>
+    }
+}
+
+
+<form method="post">
+    <div class="fomr-group">
+        <label asp-for="Name"></label>
+        <input type="text" value="" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <input type="submit" value="Create" class="btn btn-success mt-2" />
+</form>
+

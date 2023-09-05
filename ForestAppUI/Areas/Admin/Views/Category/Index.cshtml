@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Category>
+
+
+<a href="/admin/category/create" class="btn btn-success m-3 w-25">Create</a>
+
+
+<table class="table-primary table-bordered table-hover table-striped w-100">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Category Name</th>
+            <th>Settings</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>@item.Id</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    <a href="/admin/category/edit/@item.Id" class="btn btn-warning">Edit</a>
+                    <a href="/admin/category/detail/@item.Id" class="btn btn-info">Detail</a>
+                    <a href="/admin/category/delete/@item.Id" class="btn btn-danger">Delete</a>
+
+                </td>
+
+           </tr> 
+        }
+    </tbody>
+</table>

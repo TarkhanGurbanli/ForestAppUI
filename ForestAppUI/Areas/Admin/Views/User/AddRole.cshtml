@@ -1,0 +1,20 @@
+﻿@model UserRoleVM
+
+
+
+<button class="btn btn-dark mb-4"><a class="text-white text-decoration-none" href="/admin/user"><i class="fa-solid fa-chevron-left"></i>  Back</a></button>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="@Model.User.Id" />
+
+    <select class="form-select form-control" name="Role" aria-label="Default select example">
+        @foreach (var role in Model.Roles)
+        {
+            <option value="@role">@role</option>
+        }
+    </select>
+
+    <input type="submit" class="btn btn-success mt-3" value="Add Role" />
+
+</form>

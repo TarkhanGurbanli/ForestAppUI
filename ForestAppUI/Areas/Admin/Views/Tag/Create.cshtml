@@ -1,0 +1,13 @@
+﻿@model Tag
+
+<a href="/admin/tag" class="btn btn-dark m-2"><i class="fa-solid fa-caret-left"></i> Back</a>
+
+<form method="post">
+    <div asp-validation-summary="All" class="alert-danger"></div>
+    <div class="form-group">
+        <label asp-for="@Model.TagName" class="alert-dark w-25 p-2"></label>
+        <input type="text" asp-for="@Model.TagName" class="form-control" />
+        <span asp-validation-for="@Model.TagName" class="alert-danger"></span>
+    </div>
+    <input type="submit" value="Create" class="btn btn-success w-25 m-2"/>
+</form>

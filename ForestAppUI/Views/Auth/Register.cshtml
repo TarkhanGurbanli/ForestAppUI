@@ -1,0 +1,67 @@
+﻿@model RegisterDto
+
+
+@{
+    Layout = "_AuthLayout";
+}
+
+
+
+<div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
+                  </div>
+
+                  <form method="post" class="row g-3 needs-validation" >
+                     <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Firstname</label>
+                <input type="text" name="Firstname" class="form-control" asp-for="Firstname" id="yourName">
+                       <span asp-validation-for="Firstname" class="alert-danger"></span>
+                    </div>
+
+                     <div class="col-12">
+                      <label for="yourSurname" class="form-label">Surname</label>
+                     <input type="text" name="Lastname" class="form-control" asp-for="Lastname" id="yourSurname" >
+                     <span asp-validation-for="Lastname" class="alert-danger"></span>
+
+            </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Your Email</label>
+                      <input type="email" name="email" class="form-control" asp-for="Email" id="yourEmail" >
+                       <span asp-validation-for="Email" class="alert-danger"></span>
+
+                    </div>
+
+                
+
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input type="password" name="Password" asp-for="Password" class="form-control" id="yourPassword" >
+                       <span asp-validation-for="Password" class="alert-danger"></span>
+
+                    </div>
+
+                    <div class="col-12">
+                     <label for="yourPasswordConfirm" class="form-label">Password Repeat</label>
+                <input type="password" name="PasswordConfirmation" asp-for="PasswordConfirmation" class="form-control" id="PasswordRepead">
+                       <span asp-validation-for="PasswordConfirmation" class="alert-danger"></span>
+
+            </div>
+
+           
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                    </div>
+                  </form>
+                    <div class="col-12">
+                      <p class="small mb-0">Already have an account? <a href="/auth/login">Login</a></p>
+                    </div>
+
+                </div>
+              </div>
